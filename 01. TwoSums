@@ -1,0 +1,17 @@
+class Solution:
+ def twoSum(self, nums: List[int], target: int) -> List[int]:
+ hasher = {}
+ 
+ for idx, i in enumerate(nums):
+ if hasher.get(i) is not None:
+ return [hasher.get(i), idx]
+ hasher[target-i] = idx
+
+
+'''
+Runtime: O(n)
+Memory: O(n)
+
+Whether you have small arrays, you can consider an implementation with two loops in order to achieve O(1) memory. You sacrifice scalability for circumstantial performance
+
+'''
